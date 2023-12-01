@@ -1,0 +1,99 @@
+// Primary
+$darkcyan : hsl(158, 36%, 37%);
+$Cream: hsl(30, 38%, 92%);
+
+//Neutre
+$verydarkblue : hsl(212, 21%, 14%);
+$darkgrayishblue : hsl(228, 12%, 48%);
+$white : hsl(0, 0%, 100%);
+
+
+body{
+    font-size : 14px;
+    font-family : "Montserrat", "Fraunces";
+    background-color : $Cream;
+}
+
+.general{
+    border-radius : 15px;
+    background-color : $white;
+    width : 580px;
+    display:flex;
+    margin : 200px auto;
+    .general__left{
+        .left__photo{
+            height:450px;
+            width: 280px;
+            background-image: url(image/image-product-desktop.jpg);
+            background-size:cover;
+            background-repeat : no-repeat;
+            border-top-left-radius : 15px;
+            border-bottom-left-radius : 15px;
+        }
+    }
+    .general__right{
+        margin : 0 30px;
+        .right__h1{
+            font-size:1.5em;
+            font-weight : 500;
+            color : $darkgrayishblue;
+        }
+        .right__h2{
+            font-size : 2.5em;
+            color : $verydarkblue;
+            font-family : "Fraunces"
+        }
+        .right__p{
+            color : $darkgrayishblue;
+            margin-bottom : 0px;
+        }
+
+        .right__price{
+            display:flex;
+            align-items : center;
+            .price__actuel{
+                color : $darkcyan;
+                font-family : "Fraunces";
+                font-size: 2em;
+            }
+            .price__old{
+                text-decoration : line-through;
+                color : $darkgrayishblue;
+                margin-left : 20px;
+            }
+        }
+        .right__panier{
+            width : 220px;
+            background-color : $darkcyan;
+            height : 40px;
+            border-radius : 10px;
+            border : none;
+            color : $white;
+            &:hover{
+                background-color : $verydarkblue;
+            }
+        }
+    }
+}
+
+//mobile
+@media (max-width:375px){
+
+    .general{
+        flex-direction : column;
+        width : 280px;
+    
+    .general__left{
+        .left__photo{
+            border-top-right-radius : 15px;
+            border-bottom-left-radius : 0px !important;
+            background-image: url(image/image-product-mobile.jpg);
+            }
+        }
+    .general__right{
+        .right__panier{
+            margin-bottom :20px;
+        }
+        }
+    }
+}
